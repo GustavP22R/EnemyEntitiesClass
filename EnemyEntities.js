@@ -18,7 +18,7 @@ class EnemyEntities
     }
 
     //Checks for collision between hostile entity and player
-    EntityPlayerCollision(playerKoords)
+    EntityPlayerCollision(playerCoords)
     {
 
     }
@@ -26,31 +26,46 @@ class EnemyEntities
     //Entity that moves with a constant function
     ConstantEntity()
     {
-       
+        this.x = this.x + this.speed;
+        this.k = this.y1;
+        this.y = this.k * 1;
     }
 
     //Entity that moves with a linear function
     LinearEntity()
     {
- 
+        this.x = this.x + this.speed;
+        this.k = (this.y2 - this.y1) / 820;
+        this.flytY = this.y1 - (this.k * this.xStart);
+        this.y = (this.k * this.x) + this.flytY;
     }
 
     //Entity  that moves with a quadratic function
     QuadraticEntity()
     {
-      
+        this.x = this.x + this.speed;
+        this.k = (this.y1 - this.y2) / (pow(this.xStart, this.p) - pow(820, this.p));
+        this.flytY = this.y1 - this.k * pow(this.xStart, this.p);
+        this.y = this.k * (this.x * this.x) + this.flytY;
     }
 
     //Entity that moves with a cubic function
     CubicEntity()
     {
-        
+        this.x = this.x + this.speed;
+        this.k = (this.y1 - this.y2) / (pow(this.xStart, this.p) - pow(820, this.p));
+        this.flytY = this.y1 - this.k * pow(this.xStart, this.p);
+        this.y = this.k * (this.x * this.x * this.x) + this.flytY; 
     }
 
     //Entity that moves with a exponential function
     ExponentialEntity()
     {
-
+        this.x = this.x + this.speed;
+        this.potens = this.y2 / (this.y1 * (820 - this.xStart));
+        this.a = pow(10, this.potens);
+        this.k = this.y2 / (pow(this.a, 820));
+        this.y = this.k * (pow(this.a, this.x));
     }
 
     //Entity that moves with a logarithmic function
@@ -68,6 +83,9 @@ class EnemyEntities
     //Entity that moves with a root function
     RootEntity()
     {
-
+        this.x = this.x + this.speed;
+        this.k = (this.y1 - this.y2) / (pow(this.xStart,  this.p));
+        this.flytY = this.y1 - this.k * (pow(this.xStart, this.p));
+        this.y = this.k * (pow(this.x, this.p)) + this.flytY;
     }
 }
