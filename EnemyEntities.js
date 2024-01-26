@@ -5,67 +5,67 @@ class EnemyEntities
 
     }
 
-    //Movement til at teste classen, bliver slettet i endelig program
+    //Movement test for entities, will eventually be deleted
     TemporaryMovement()
     {
 
     }
 
-    //Koordinatet til entitien, til at beregne collision
+    //Returns the x- and y-coordinates of the hostile entity
     EntityCoordinates()
     {
-
+        return [this.x, this.y];
     }
 
-    //Detect om entity har collision med player
+    //Checks for collision between hostile entity and player
     EntityPlayerCollision(playerKoords)
     {
 
     }
 
-    //Entity der bevæger sig med nultegrads funktion
+    //Entity that moves with a constant function
     ConstantEntity()
     {
        
     }
 
-    //Entity der bevæger sig med førstegrads funktion
+    //Entity that moves with a linear function
     LinearEntity()
     {
  
     }
 
-    //Entity der bevæger sig med andengrads funktion
+    //Entity  that moves with a quadratic function
     QuadraticEntity()
     {
       
     }
 
-    //Entity der bevæger sig med tredjegrads funktion
+    //Entity that moves with a cubic function
     CubicEntity()
     {
         
     }
 
-    //Entity der bevæger sig med eksponentiel funktion
+    //Entity that moves with a exponential function
     ExponentialEntity()
     {
 
     }
 
-    //Entity der bevæger sig med logaritmisk funktion
-    LogarithmEntity()
+    //Entity that moves with a logarithmic function
+    LogarithmicEntity()
     {
 
     }
 
-    //Entity der bevæger sig med sinus funktion
+    //Entity that moves with a sinus function/curve
     SinusEntity()
     {
 
     }
 
-    //Entity der bevæger sig med forskellige rod funktioner
+    //Entity that moves with a root function
     RootEntity()
     {
 
