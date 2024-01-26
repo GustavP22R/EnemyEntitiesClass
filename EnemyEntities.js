@@ -1,8 +1,15 @@
 class EnemyEntities
 {
-    constructor()
+    constructor(x,y,speed,diameter)
     {
+        this.x = x;
+        this.y = y;
 
+        this.xStart = this.x;
+
+        this.HostileEntitySpeed = speed;
+
+        this.dia = diameter;
     }
 
     //Movement test for entities, will eventually be deleted
