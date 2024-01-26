@@ -6,55 +6,55 @@ class EnemyEntities
     }
 
     //Movement til at teste classen, bliver slettet i endelig program
-    MidlertidigMovement()
+    TemporaryMovement()
     {
 
     }
 
     //Koordinatet til entitien, til at beregne collision
-    EntityKoordinat()
+    EntityCoordinates()
     {
 
     }
 
     //Detect om entity har collision med player
-    CollisionPlayer(playerKoords)
+    EntityPlayerCollision(playerKoords)
     {
 
     }
 
     //Entity der bevæger sig med nultegrads funktion
-    NultegradsEntity()
+    ConstantEntity()
     {
-
+       
     }
 
     //Entity der bevæger sig med førstegrads funktion
-    FoerstegradsEntity()
+    LinearEntity()
     {
-
+ 
     }
 
     //Entity der bevæger sig med andengrads funktion
-    AndengradsEntity()
+    QuadraticEntity()
     {
-
+      
     }
 
     //Entity der bevæger sig med tredjegrads funktion
-    TredjegradsEntity()
+    CubicEntity()
     {
-
+        
     }
 
     //Entity der bevæger sig med eksponentiel funktion
-    EksponentielEntity()
+    ExponentialEntity()
     {
 
     }
 
     //Entity der bevæger sig med logaritmisk funktion
-    LogaritmiskEntity()
+    LogarithmEntity()
     {
 
     }
@@ -66,7 +66,7 @@ class EnemyEntities
     }
 
     //Entity der bevæger sig med forskellige rod funktioner
-    RodEntity()
+    RootEntity()
     {
 
     }
