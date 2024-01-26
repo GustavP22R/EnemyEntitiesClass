@@ -42,7 +42,7 @@ class EnemyEntities
     LinearEntity()
     {
         this.x = this.x + this.speed;
-        this.k = (this.y2 - this.y1) / 820;
+        this.k = (this.y2 - this.y1) / width + (this.d / 2);
         this.flytY = this.y1 - (this.k * this.xStart);
         this.y = (this.k * this.x) + this.flytY;
     }
@@ -51,7 +51,7 @@ class EnemyEntities
     QuadraticEntity()
     {
         this.x = this.x + this.speed;
-        this.k = (this.y1 - this.y2) / (pow(this.xStart, this.p) - pow(820, this.p));
+        this.k = (this.y1 - this.y2) / (pow(this.xStart, this.p) - pow(width + (this.d / 2), this.p));
         this.flytY = this.y1 - this.k * pow(this.xStart, this.p);
         this.y = this.k * (this.x * this.x) + this.flytY;
     }
@@ -60,7 +60,7 @@ class EnemyEntities
     CubicEntity()
     {
         this.x = this.x + this.speed;
-        this.k = (this.y1 - this.y2) / (pow(this.xStart, this.p) - pow(820, this.p));
+        this.k = (this.y1 - this.y2) / (pow(this.xStart, this.p) - pow(width + (this.d / 2), this.p));
         this.flytY = this.y1 - this.k * pow(this.xStart, this.p);
         this.y = this.k * (this.x * this.x * this.x) + this.flytY; 
     }
@@ -69,9 +69,9 @@ class EnemyEntities
     ExponentialEntity()
     {
         this.x = this.x + this.speed;
-        this.potens = this.y2 / (this.y1 * (820 - this.xStart));
+        this.potens = this.y2 / (this.y1 * (width + (this.d / 2) - this.xStart));
         this.a = pow(10, this.potens);
-        this.k = this.y2 / (pow(this.a, 820));
+        this.k = this.y2 / (pow(this.a, width + (this.d / 2)));
         this.y = this.k * (pow(this.a, this.x));
     }
 
