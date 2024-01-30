@@ -105,12 +105,7 @@ class EnemyEntities
 
     //Entity that moves with a sinus function/curve
     sinusEntity()
-    {
-        this.x = this.x + this.HostileEntitySpeed;
-
-        this.angle += this.HostileEntitySpeed / 2;
-    
-        this.y = height/2 + sin(this.angle) * this.amplitude;    
+    {   
 
     }
 
