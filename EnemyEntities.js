@@ -1,6 +1,6 @@
 class EnemyEntities
 {
-    constructor(x, y, Xspeed, diameter)
+    constructor(x, y, xSpeed, diameter)
     {
         this.x = x;
         this.y = y;
@@ -9,7 +9,7 @@ class EnemyEntities
         this.y1 = random(0, 400);
         this.y2 = random(0, 400);
 
-        this.HostileEntitySpeed = Xspeed;
+        this.HostileEntitySpeed = xSpeed;
 
         this.diameter = diameter;
     }
@@ -124,7 +124,11 @@ class EnemyEntities
     //Entity that moves with a sinus function/curve
     sinusEntity()
     {
-        this.x = this.x + this.speed;
+        this.x = this.x + this.HostileEntitySpeed;
+
+        this.angle += this.HostileEntitySpeed / 2;
+    
+        this.y = height/2 + sin(this.angle) * this.amplitude;    
     }
 
     //Entity that moves with a root function
