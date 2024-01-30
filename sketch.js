@@ -1,18 +1,16 @@
 function setup() 
 {
   createCanvas(400, 400);
-  for(let i = 0; i <= nProjectiles - 1; i++)
-  {
-    //if statements for different functions (linear, quadratic, cubic and more)
-    arrOpps.push(new EnemyEntities(-40, 100, 5, 20));
-  }
 
+  enemy = new EnemyEntities(200, 200, 5, 20);
 }
 
 function draw() 
 {
   background(220);
 
+  enemy.choseFunction(1);
+  enemy.show();
 
 }
 

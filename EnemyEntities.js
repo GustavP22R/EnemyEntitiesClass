@@ -14,7 +14,7 @@ class EnemyEntities
         this.diameter = diameter;
     }
 
-    chosingTheFunction(functionType)
+    choseFunction(functionType)
     {
         switch(functionType)
         {
@@ -62,6 +62,11 @@ class EnemyEntities
         {
             //Lose life
         }
+    }
+
+    show()
+    {
+        circle(this.x, height - 400, 20);
     }
 
     //Entity that moves with a constant function
