@@ -1,9 +1,8 @@
 class EnemyEntities
 {
-    constructor(x, y, Xspeed, diameter)
+    constructor(x, Xspeed, diameter)
     {
         this.x = x;
-        this.y = y;
 
         this.xStart = x;
         this.y1 = random(0, 400);
@@ -66,7 +65,7 @@ class EnemyEntities
 
     show()
     {
-        circle(this.x, height - 400, 20);
+        circle(this.x, height - this.y, 20);
     }
 
     //Entity that moves with a constant function
