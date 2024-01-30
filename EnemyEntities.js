@@ -14,26 +14,55 @@ class EnemyEntities
         this.diameter = diameter;
     }
 
+    chosingTheFunction(functionType)
+    {
+        switch(functionType)
+        {
+            case 0:
+                this.constantEntity();
+                break;
+            case 1:
+                this.linearEntity();
+                break;
+            case 2:
+                this.quadraticEntity();
+                break;
+            case 3:
+                this.cubicEntity();
+                break;
+            case 4:
+                this.exponentialEntity();
+                break;
+            case 5:
+                this.sinusEntity();
+                break;
+            case 6:
+                this.rootEntity();
+                break;
+
+        }
+    }
+
     //Movement test for entities, will eventually be deleted
-    TemporaryMovement()
+    temporaryMovement()
     {
 
     }
 
     //Returns the x- and y-coordinates of the hostile entity
-    EntityCoordinates()
+    entityCoordinates()
     {
         return [this.x, this.y];
     }
 
     //Checks for collision between hostile entity and player
-    EntityPlayerCollision(playerCoords)
+    entityPlayerCollision(playerCoords)
     {
 
     }
 
     //Entity that moves with a constant function
-    ConstantEntity()
+    constantEntity()
     {
         this.x = this.x + this.HostileEntitySpeed;
         this.k = this.y1;
@@ -41,7 +70,7 @@ class EnemyEntities
     }
 
     //Entity that moves with a linear function
-    LinearEntity()
+    linearEntity()
     {
         this.x = this.x + this.HostileEntitySpeed;
         this.k = (this.y2 - this.y1) / width + (this.diameter / 2);
@@ -50,7 +79,7 @@ class EnemyEntities
     }
 
     //Entity  that moves with a quadratic function
-    QuadraticEntity()
+    quadraticEntity()
     {
         this.x = this.x + this.HostileEntitySpeed;
         this.k = (this.y1 - this.y2) / (pow(this.xStart, 2) - pow(width + (this.diameter / 2), 2));
@@ -59,7 +88,7 @@ class EnemyEntities
     }
 
     //Entity that moves with a cubic function
-    CubicEntity()
+    cubicEntity()
     {
         this.x = this.x + this.HostileEntitySpeed;
         this.k = (this.y1 - this.y2) / (pow(this.xStart, 3) - pow(width + (this.diameter / 2), 3));
@@ -68,7 +97,7 @@ class EnemyEntities
     }
 
     //Entity that moves with a exponential function
-    ExponentialEntity()
+    exponentialEntity()
     {
         this.x = this.x + this.HostileEntitySpeed;
         this.potens = this.y2 / (this.y1 * (width + (this.diameter / 2) - this.xStart));
@@ -78,19 +107,19 @@ class EnemyEntities
     }
 
     //Entity that moves with a logarithmic function
-    LogarithmicEntity()
+    logarithmicEntity()
     {
 
     }
 
     //Entity that moves with a sinus function/curve
-    SinusEntity()
+    sinusEntity()
     {
 
     }
 
     //Entity that moves with a root function
-    RootEntity()
+    rootEntity()
     {
         this.p = random(0.1, 0.9);
         
