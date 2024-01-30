@@ -58,7 +58,10 @@ class EnemyEntities
     //Checks for collision between hostile entity and player
     entityPlayerCollision(playerCoords)
     {
-
+        if((playerCoords[1] - this.y)/(this.playerCoords[0] - this.x) < playerLength)
+        {
+            //Lose life
+        }
     }
 
     //Entity that moves with a constant function
@@ -109,13 +112,14 @@ class EnemyEntities
     //Entity that moves with a logarithmic function
     logarithmicEntity()
     {
+        this.x = this.x + this.speed;
 
     }
 
     //Entity that moves with a sinus function/curve
     sinusEntity()
     {
-
+        this.x = this.x + this.speed;
     }
 
     //Entity that moves with a root function
