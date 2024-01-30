@@ -15,37 +15,31 @@ class EnemyEntities
 
     choseFunction(functionType)
     {
-        switch(functionType)
+        switch(functionType) //If new function is added, add another case here
         {
-            case 0:
+            case "constant":
                 this.constantEntity();
                 break;
-            case 1:
+            case "linear":
                 this.linearEntity();
                 break;
-            case 2:
+            case "quadratic":
                 this.quadraticEntity();
                 break;
-            case 3:
+            case "cubic":
                 this.cubicEntity();
                 break;
-            case 4:
+            case "exponential":
                 this.exponentialEntity();
                 break;
-            case 5:
+            case "sinus":
                 this.sinusEntity();
                 break;
-            case 6:
+            case "root":
                 this.rootEntity();
                 break;
 
         }
-    }
-
-    //Movement test for entities, will eventually be deleted
-    temporaryMovement()
-    {
-
     }
 
     //Returns the x- and y-coordinates of the hostile entity
@@ -57,7 +51,7 @@ class EnemyEntities
     //Checks for collision between hostile entity and player
     entityPlayerCollision(playerCoords)
     {
-        if((playerCoords[1] - this.y)/(this.playerCoords[0] - this.x) < playerLength)
+        if((playerCoords[1] - this.y) / (this.playerCoords[0] - this.x) <= playerLength)
         {
             //Lose life
         }
@@ -65,7 +59,7 @@ class EnemyEntities
 
     show()
     {
-        circle(this.x, height - this.y, 20);
+        circle(this.x, height - this.y, this.diameter);
     }
 
     //Entity that moves with a constant function
@@ -80,7 +74,7 @@ class EnemyEntities
     linearEntity()
     {
         this.x = this.x + this.HostileEntitySpeed;
-        this.k = (this.y2 - this.y1) / width + (this.diameter / 2);
+        this.k = (this.y2 - this.y1) / (width + (this.diameter / 2));
         this.flytY = this.y1 - (this.k * this.xStart);
         this.y = (this.k * this.x) + this.flytY;
     }
@@ -88,52 +82,36 @@ class EnemyEntities
     //Entity  that moves with a quadratic function
     quadraticEntity()
     {
-        this.x = this.x + this.HostileEntitySpeed;
-        this.k = (this.y1 - this.y2) / (pow(this.xStart, 2) - pow(width + (this.diameter / 2), 2));
-        this.flytY = this.y1 - this.k * pow(this.xStart, 2);
-        this.y = this.k * (this.x * this.x) + this.flytY;
+
     }
 
     //Entity that moves with a cubic function
     cubicEntity()
     {
-        this.x = this.x + this.HostileEntitySpeed;
-        this.k = (this.y1 - this.y2) / (pow(this.xStart, 3) - pow(width + (this.diameter / 2), 3));
-        this.flytY = this.y1 - this.k * pow(this.xStart, 3);
-        this.y = this.k * pow(this.x, 3) + this.flytY; 
+
     }
 
     //Entity that moves with a exponential function
     exponentialEntity()
     {
-        this.x = this.x + this.HostileEntitySpeed;
-        this.potens = this.y2 / (this.y1 * (width + (this.diameter / 2) - this.xStart));
-        this.a = pow(10, this.potens);
-        this.k = this.y2 / (pow(this.a, width + (this.diameter / 2)));
-        this.y = this.k * (pow(this.a, this.x));
+
     }
 
     //Entity that moves with a logarithmic function
     logarithmicEntity()
     {
-        this.x = this.x + this.speed;
-
+ 
     }
 
     //Entity that moves with a sinus function/curve
     sinusEntity()
     {
-        this.x = this.x + this.speed;
+
     }
 
     //Entity that moves with a root function
     rootEntity()
     {
-        this.p = random(0.1, 0.9);
-        
-        this.x = this.x + this.HostileEntitySpeed;
-        this.k = (this.y1 - this.y2) / (pow(this.xStart,  this.p));
-        this.flytY = this.y1 - this.k * (pow(this.xStart, this.p));
-        this.y = this.k * (pow(this.x, this.p)) + this.flytY;
+
     }
 }
