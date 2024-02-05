@@ -1,12 +1,14 @@
 class EnemyEntities
 {
-    constructor(x, xSpeed, diameter)
+    constructor(x, xSpeed, diameter, enemySprite)
     {
         this.x = x;
 
         this.xStart = x;
-        this.y1 = random(0, 400);
-        this.y2 = random(0, 400);
+        this.y1 = random(0, height);
+        this.y2 = random(0, height);
+
+        this.enemySprite = enemySprite[int(random(0, enemySprite.length))];
 
         this.HostileEntitySpeed = xSpeed;
 
@@ -66,8 +68,8 @@ class EnemyEntities
     //Draws the entity when called
     show()
     {
-        //image(enemySprite, this.x, this.y, this.diameter, this.diameter);
-        circle(this.x, height - this.y, this.diameter);
+        imageMode(CENTER);
+        image(this.enemySprite, this.x, height - this.y, this.diameter, this.diameter);
     }
 
     //Entity that moves with a constant function
