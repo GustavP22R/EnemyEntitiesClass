@@ -53,12 +53,20 @@ class EnemyEntities
     {
         if((playerCoords[1] - this.y) / (this.playerCoords[0] - this.x) <= playerLength)
         {
-            //Lose life
+            return true;
         }
+        return false;
     }
 
+    deleteEnemyEntity()
+    {
+        return this.x;
+    }
+
+    //Draws the entity when called
     show()
     {
+        //image(enemySprite, this.x, this.y, this.diameter, this.diameter);
         circle(this.x, height - this.y, this.diameter);
     }
 
